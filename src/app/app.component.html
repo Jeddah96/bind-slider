@@ -1,30 +1,8 @@
-<div class="container">
-  <article>
-    <h4 class="mBottom">Two way binding</h4>
-    <app-range-slider [min]="-20" [max]="60" [(ngModel)]="twoWayRange" [toolTips]="[false,false]" (ngModelChange)="changed()"></app-range-slider>
-    <div style="display:inline-block">Min:<input type="number" [(ngModel)]="twoWayRange[0]" (ngModelChange)="changed()"></div>
-    <div style="display:inline-block">Max:<input type="number" [(ngModel)]="twoWayRange[1]" (ngModelChange)="changed()"></div>
-    <ul class="nav nav-tabs mtop">
-      <li class="active"><a data-toggle="tab" href="#HTML2">HTML</a></li>
-      <li><a data-toggle="tab" href="#ts2">.ts</a></li>
-    </ul>
-    <div class="tab-content">
-      <div id="HTML2" class="tab-pane fade in active">
-        <pre> &lt;range-slider [min]="min" [max]="max" [toolTips]="[false,false]" [(ngModel)]="twoWayRange">        &lt;/range-slider>
-                    </pre>
-      </div>
-      <div id="ts2" class="tab-pane fade">
-        <pre>
-                          min=-20;
-                          max=60;
-                          twoWayRange=[10,30];
-                          //oninput change you need to do
-                          changed()&#123;
-                            this.twoWayRange=[...this.twoWayRange];
-                            &#125;
-                      </pre>
-      </div>
-    </div>
-  </article>
-
-</div>
+<br>
+<br>
+<app-multi-slider hide-values [initConfig]="initConfigMultiData"></app-multi-slider>
+<br>
+<br>
+<app-multi-slider [multiRange]="false" [initConfig]="initConfigSingleData"></app-multi-slider>
+<br>
+<br>

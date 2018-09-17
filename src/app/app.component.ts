@@ -1,28 +1,12 @@
 import { Component } from '@angular/core';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-  min = 5;
-  max = 59;
-  range = [1400, 1600];
-  min1 = -10;
-  max1 = 50;
-  step = 5;
-  twoWayRange = [10, 30];
-  customStyleRange = [5, 38];
-  stepRange = [25, 40];
-  dumyForm = {
-    range: [9, 38]
-  };
-  changed() {
-    this.twoWayRange = [...this.twoWayRange];
-  }
-  onSubmit() { }
-  rangeChanged(event: any) {
-    console.log(event);
-  }
+  initConfigMultiData = { 'firstBase': 20, 'secondBase': 70, 'minValue': -50,
+  'maxValue': 100, 'minSelected': -10, 'maxSelected': 80, 'step': 2 };
+  initConfigSingleData = { 'firstBase': 20, 'secondBase': 70, 'minValue': -10, 'maxValue': 100, 'minSelected': 20, 'step': 5 };
 }
