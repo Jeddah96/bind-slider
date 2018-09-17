@@ -3,6 +3,8 @@ import {
   ElementRef, OnInit, HostListener, SimpleChanges, OnChanges
 } from '@angular/core';
 import { InitRange } from './../models/slider-data.model';
+import { NameService } from './Service';
+import { Type } from '../models/type.enum';
 
 @Component({
   selector: 'app-multi-slider',
@@ -33,8 +35,9 @@ export class MultiSliderComponent implements OnInit, OnChanges {
     left: 0,
     right: 1
   };
+  private currentType: Type;
 
-  constructor(private el: ElementRef) {
+  constructor(private el: ElementRef, private nameService: NameService) {
   }
 
   @Input('initConfig')
@@ -78,6 +81,14 @@ export class MultiSliderComponent implements OnInit, OnChanges {
     this._sliderWidth = this.el.nativeElement.children[0].children[0].offsetWidth;
     this.resetModel();
     this._sliderInitiated = true;
+    this.nameService.getType().subscribe( t =>
+      this.currentType = t
+    );
+    if (this.currentType == Type.DOLLAR) {
+      const n = 0;
+      const returnS = `\$${n}`;
+      console.log(returnS);
+    }
   }
   private resetModel() {
     this.validateSliderValues();
