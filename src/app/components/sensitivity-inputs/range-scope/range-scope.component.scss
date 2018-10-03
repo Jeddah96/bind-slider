@@ -1,0 +1,130 @@
+.ranges__container {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  .item {
+      flex-basis: 17%;
+  }
+}
+
+.action__container {
+  width: 249px;
+}
+
+.popover__set-double {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 0 51px 0 34px;
+}
+
+.min__max {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 6px 66px 0 2px;
+}
+
+.popover__set-info {
+  padding: 15px 45px 23px 34px;
+  font-size: 13px;
+}
+
+.popover__case {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.popover__set-min {
+  display: block;
+  width: 89px;
+}
+
+.popover__set-max {
+  display: block;
+}
+
+.set__range {
+  width: 51px;
+}
+
+.set__sign {
+  display: inline-block;
+  background: #f4f4f5;
+  padding: 2px 5px;
+  border: 1px solid #ccc;
+  margin: 0;
+}
+
+.set__single-input {
+  padding-left: 10px;
+}
+
+.popover__set-single {
+  padding-bottom: 25px;
+}
+
+
+.popover__footer {
+
+  height: 53px;
+  background: #f4f4f5;
+  margin: 15px -15px -15px;
+  padding: 15px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  .popover__primary-btn {
+      width: 66px;
+      height: 30px;
+      border-radius: 2px;
+
+      span {
+          width: 41px;
+          height: 12px;
+          font-size: 11px;
+          font-weight: bold;
+          line-height: 1.09;
+          text-align: center;
+          color: #00a3e0;
+      }
+
+      &:hover {
+          background-color: #e5f5fb;
+      }
+
+      &:active {
+          background-color: #ccedf9;
+      }
+  }
+
+  .popover__primary-btn {
+      background-color: #00a3e0;
+      border: none;
+
+      span {
+          color: white;
+      }
+
+      &:hover {
+          background-color: #00a3e0;
+          border: none;
+      }
+
+      &:active {
+          background-color: #00a3e0;
+          border: none;
+      }
+  }
+
+  .popover__secondary-btn {
+      color: #00a3e0;
+      padding: 0 15px;
+      font-size: 11px;
+      font-weight: bold;
+  }
+}

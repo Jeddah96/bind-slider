@@ -1,0 +1,91 @@
+<div class="ranges__container">
+  <div class="item">
+    <p class="range__title">Company-Specific Risk Premium
+      <button [popover]="popInfo" popoverTitle="Edit Slider" placement="bottom">
+      </button>
+    </p>
+    <ng-template #popInfo>
+      <div class="action__container">
+        <!-- <div class="popover__header">
+                            <h2 class="popover__title">Edit Slider View</h2>
+                        </div> -->
+        <div class="popover__message-container">
+          <div class="popover__case">
+            <input type="radio">
+            <span>Range:</span>
+          </div>
+          <div class="min__max">
+            <span>Min:</span>
+            <span>Max:</span>
+          </div>
+          <div class="popover__set-double">
+            <div class="popover__set-min">
+              <input class="set__range" type="number">
+              <label class="set__sign">%</label>
+            </div>
+            <div class="popover__set-max">
+              <input class="set__range" type="number">
+              <label class="set__sign">%</label>
+            </div>
+          </div>
+          <div class="popover__set-info">
+          </div>
+          <div class="popover__set-single">
+            <div class="popover__case">
+              <input type="radio">
+              <span>Single Value:</span>
+              <div class="set__single-input">
+                <input class="set__range" type="number">
+                <label class="set__sign">%</label>
+              </div>
+            </div>
+          </div>
+          <div class="popover__set-base">
+            <div class="popover__case">
+              <input type="radio">
+              <span>Same as Base Case:</span>
+            </div>
+          </div>
+        </div>
+        <div class="popover__footer">
+          <a href="#" class="popover__secondary-btn" (click)="cancel()"><span>Cancel</span></a>
+          <button class="popover__primary-btn"><span>Save</span></button>
+        </div>
+      </div>
+    </ng-template>
+    <app-range [initConfig]="initConfig_1"></app-range>
+  </div>
+
+  <div class="item">
+    <app-range [initConfig]="initConfig_2"></app-range>
+  </div>
+
+
+  <div class="item">
+    <app-range [initConfig]="initConfig_4"></app-range>
+  </div>
+
+  <div class="item">
+    <app-range [initConfig]="initConfig_5"></app-range>
+  </div>
+
+  <div class="item">
+    <app-range [initConfig]="initConfig_6"></app-range>
+  </div>
+
+  <div class="item">
+    <app-range [initConfig]="initConfig_7"></app-range>
+  </div>
+
+  <div class="item">
+    <app-range [initConfig]="initConfig_8"></app-range>
+  </div>
+
+  <div class="item">
+    <app-range [initConfig]="initConfig_9"></app-range>
+  </div>
+
+  <div class="item">
+    <app-range [initConfig]="initConfig_10"></app-range>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div>
+    <h2 class="sensitivity__title">
+        <button [popover]="popInfo" popoverTitle="Edit Slider" placement="bottom">
+        </button>Sensitivity Inputs
+    </h2>
+</div>
+<!--TODO: Container temporary mocked. After placing this component to reconcilation tab, this container will be removed-->
+<div class="container sensitivity__container">
+    <div class="btn__header">
+        <!--TODO: Mock-->
+        <div class="btn-group">
+            <label class="btn btn-left" btnCheckbox tabindex="0" role="button">DCF</label>
+            <label class="btn btn-mid" btnCheckbox tabindex="0" role="button">GPC</label>
+            <label class="btn btn-right" btnCheckbox tabindex="0" role="button">GT</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="ranges__container">
+            <app-range-scope></app-range-scope>
+        </div>
+    </div>
+</div>

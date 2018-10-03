@@ -2,15 +2,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { MultiSliderComponent } from './multi-slider/multi-slider.component';
+import * as fromComponents from './components';
+import { PopoverModule } from 'ngx-bootstrap/popover';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MultiSliderComponent
+    ...fromComponents.components,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    PopoverModule.forRoot(),
+    TooltipModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

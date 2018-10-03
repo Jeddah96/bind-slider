@@ -1,0 +1,52 @@
+<ng-template [ngIf]="_data?.isMultiRange" [ngIfElse]="singleRange">
+    <div class="range">
+        <p class="range__title">{{this._data.rangeTitle}}</p>
+        <p class="range__base-val">BASE {{this._data.baseVal}}{{this._data.sign}}</p>
+    </div>
+    <div class="slider" (mousemove)="handlerSliding($event)">
+        <div class="slider__main-bar" #sliderMainBar>
+            <div class="slider__left-handle" [style.left.%]="this._handlerX[0]" (mousedown)="setHandlerActive($event, 0)">
+                <div class="range_tooltip">
+                    <div [tooltip]="tooltipData" placement="top" *ngIf="!this._data.isTooltipHidden" isOpen='true'></div>
+                    <ng-template #tooltipData>{{this._data.currMin.toFixed(1)}}{{this._data.sign}}</ng-template>
+                </div>
+            </div>
+            <div class="bar__filler">
+                <span [style.left.%]="this._handlerX[0]" [style.width.%]="this._handlerX[1] - this._handlerX[0]"></span>
+            </div>
+            <div class="slider__base-handle" [style.left.%]="this._baseHandlerX[0]"></div>
+            <div class="slider__right-handle" [style.left.%]="this._handlerX[1]" (mousedown)="setHandlerActive($event, 1)">
+                <div class="range_tooltip">
+                    <div [tooltip]="tooltipDataMax" placement="bottom" isOpen='true'></div>
+                    <ng-template #tooltipDataMax>{{this._data.currMax.toFixed(1)}}{{this._data.sign}}</ng-template>
+                </div>
+            </div>
+        </div>
+        <div class="slider__init-values" *ngIf="!this._data.isValuesHidden">
+            <span>{{this._data.initMin.toFixed(1)}}{{this._data.sign}}</span>
+            <span>{{this._data.initMax.toFixed(1)}}{{this._data.sign}}</span>
+        </div>
+    </div>
+</ng-template>
+<ng-template #singleRange>
+    <div class="range">
+        <p class="range__title">{{this._data.rangeTitle}}</p>
+        <p class="range__base-val">BASE {{this._data.baseVal}}{{this._data.sign}}</p>
+    </div>
+    <div class="slider" (mousemove)="handlerSliding($event)">
+        <div class="slider__main-bar" #sliderMainBar>
+            <div class="slider__left-handle" [style.left.%]="this._handlerX[0]" (mousedown)="setHandlerActive($event, 0)">
+                <div class="range_tooltip">
+                    <div [tooltip]="tooltipData" placement="top" isOpen='true'></div>
+                    <ng-template #tooltipData>{{this._data.currMin.toFixed(1)}}{{this._data.sign}}</ng-template>
+                </div>
+            </div>
+            <span [style.left.%]="0" [style.width.%]="this._handlerX[0]"></span>
+            <div class="slider__base-handle" [style.left.%]="this._baseHandlerX[0]"></div>
+        </div>
+        <div class="slider__init-values" *ngIf="!this._data.isValuesHidden">
+            <span>{{this._data.initMin.toFixed(1)}}{{this._data.sign}}</span>
+            <span>{{this._data.initMax.toFixed(1)}}{{this._data.sign}}</span>
+        </div>
+    </div>
+</ng-template>
