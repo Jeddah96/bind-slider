@@ -4,6 +4,7 @@ import {
 } from '@angular/core';
 import { RangeConfig } from './../../models/range-config.model';
 import { RangeEventData } from './../../models/range-event.model';
+import { ConnServiceService } from '../../conn-service.service';
 
 @Component({
     selector: 'app-range',
@@ -11,6 +12,9 @@ import { RangeEventData } from './../../models/range-event.model';
     styleUrls: ['./multi-range.component.scss']
 })
 export class MultiRangeComponent implements AfterViewInit, OnInit, OnChanges {
+    constructor(private srv: ConnServiceService) {
+
+    }
 
     private _data: RangeConfig; // interface which contain all input data
     private _events: RangeEventData; // interface which contain events data
@@ -35,6 +39,10 @@ export class MultiRangeComponent implements AfterViewInit, OnInit, OnChanges {
 
     ngAfterViewInit() {
         this._initializeSlider();
+        this.srv.getInputObservable().subscribe(value => {
+            this._data.currMin = value;
+            this._handlerX[0] = value;
+        });
     }
 
     ngOnInit() {

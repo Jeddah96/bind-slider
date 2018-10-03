@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConnServiceService } from '../../../conn-service.service';
 
 @Component({
     selector: 'app-range-scope',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./range-scope.component.scss']
 })
 export class RangeScopeComponent implements OnInit {
+    constructor(private srv: ConnServiceService) {
+
+    }
 
     initConfig_1 = {
         'initMin': -40, 'initMax': 100, 'currMin': -10,
@@ -59,6 +63,11 @@ export class RangeScopeComponent implements OnInit {
     };
 
     ngOnInit() {
+    }
+
+    public updateMin(event) {
+        console.log(event);
+        this.srv.newInput(event.srcElement.valueAsNumber);
     }
 
 }

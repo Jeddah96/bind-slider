@@ -20,7 +20,7 @@
           </div>
           <div class="popover__set-double">
             <div class="popover__set-min">
-              <input class="set__range" type="number">
+              <input class="set__range" type="number" (change)='updateMin($event)'>
               <label class="set__sign">%</label>
             </div>
             <div class="popover__set-max">
